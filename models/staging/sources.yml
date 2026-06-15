@@ -1,0 +1,13 @@
+version: 2
+
+sources:
+  - name: raw
+    database: FINANCE_ANALYTICS
+    schema: RAW
+
+    tables:
+      - name: customers
+      - name: orders
+      - name: order_items
+      - name: payments
+      - name: products

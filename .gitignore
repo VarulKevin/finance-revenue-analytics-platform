@@ -1,0 +1,7 @@
+target/
+dbt_packages/
+logs/
+*.log
+.DS_Store
+Thumbs.db
+.vscode/
