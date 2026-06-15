@@ -19,6 +19,20 @@ The project follows modern data engineering and analytics engineering best pract
 
 ---
 
+## Business Problem
+
+Organizations generate large volumes of transactional data but often lack a trusted analytics layer that can provide accurate business insights.
+
+This project addresses that challenge by building a modern analytics platform that:
+
+* Centralizes business metrics
+* Provides executive-level KPI reporting
+* Enables product and revenue analysis
+* Supports payment and customer behavior analysis
+* Delivers trusted reporting datasets for business users
+
+---
+
 ## Tech Stack
 
 | Technology     | Purpose                              |
@@ -32,6 +46,8 @@ The project follows modern data engineering and analytics engineering best pract
 ---
 
 ## Architecture
+
+The architecture follows a layered analytics engineering design pattern.
 
 ![Architecture](screenshots/architecture_diagram.png)
 
@@ -88,8 +104,8 @@ The project produces executive-level KPIs including:
 | Total Revenue        | €20.3M  |
 | Total Orders         | 98,666  |
 | Products Sold        | 117,604 |
-| Average Order Value  | €164.40 |
-| Revenue per Customer | €205.83 |
+| Average Order Value  | €172.69 |
+| Revenue Per Customer | €205.83 |
 
 ---
 
@@ -100,6 +116,7 @@ Implemented dbt tests:
 * Not Null Tests
 * Unique Tests
 * Source Validation
+* Relationship Validation
 
 All tests successfully passed.
 
@@ -109,48 +126,130 @@ All tests successfully passed.
 
 The project uses dbt lineage to track dependencies from source systems through staging, marts, reporting models, and executive KPI outputs.
 
+### Initial Project Lineage
+
+![Lineage](screenshots/Initial_lineage.png)
+
+### Executive Summary Lineage
+
+![Executive Summary Lineage](screenshots/rpt_executive_summary_lineag.png)
+
+---
+
+## Snowflake Source Tables
+
+The following screenshot shows the raw source tables used within Snowflake.
+
+![Snowflake Tables](screenshots/Snowflake_tables.png)
+
+---
+
+## Source Configuration
+
+Source definitions are configured through dbt using `sources.yml`.
+
+![Source Configuration](screenshots/sources_file.png)
+
+---
+
+## Fact Model
+
+Core revenue and finance metrics are generated using the fact model layer.
+
+![Fact Model](screenshots/fact_model.png)
+
+---
+
+## dbt Build Results
+
+Successful dbt model execution.
+
+![dbt Build Success](screenshots/dbt_build_success.png)
+
+---
+
+## dbt Test Results
+
+Successful completion of data quality tests.
+
+![dbt Test Success](screenshots/dbt_test_success.png)
+
+---
+
+## Executive KPI Output
+
+The executive KPI reporting model generates consolidated business metrics used by leadership and stakeholders.
+
+![Executive KPI Output](screenshots/Executive_kpi_output.png)
+
 ---
 
 ## Tableau Dashboard
 
-The final dashboard includes:
+The final Tableau dashboard includes:
 
+* Total Revenue KPI
+* Total Orders KPI
+* Products Sold KPI
+* Average Order Value KPI
 * Revenue by State
 * Monthly Revenue Trend
 * Payment Method Analysis
 * Product Category Performance
-* Executive KPI Cards
-
----
-
-## Key Business Insights
-
-* Credit Card payments generate the majority of revenue.
-* Revenue is concentrated in a small number of states.
-* Revenue trends show strong growth throughout the reporting period.
-* Certain product categories consistently outperform others.
-
----
-
-## Screenshots
-
-### dbt Lineage
-
-![Lineage](screenshots/initial_lineage.png)
-
-### Executive KPI Output
-
-![Executive KPI](screenshots/executive_kpi_output.png)
-
-### Tableau Dashboard
 
 ![Dashboard](screenshots/Tableau_dashboard.png)
 
 ---
 
+## Project Structure
+
+The project follows a modular dbt architecture with separate staging, mart, and reporting layers.
+
+![Project Structure](screenshots/dbt_project_structure.png)
+
+---
+
+## Key Business Insights
+
+### Revenue Concentration
+
+A significant portion of total revenue originates from a limited number of states, enabling targeted market expansion strategies.
+
+### Payment Analysis
+
+Credit card transactions contribute the largest share of revenue across all payment methods.
+
+### Product Performance
+
+Certain product categories consistently outperform others and act as primary revenue drivers.
+
+### Revenue Trend
+
+Monthly revenue demonstrates a strong upward trend throughout the reporting period.
+
+---
+
+## Skills Demonstrated
+
+* Analytics Engineering
+* Data Modeling
+* Dimensional Modeling
+* SQL Development
+* Snowflake
+* dbt
+* Data Quality Testing
+* Business Intelligence
+* Tableau Dashboarding
+* Data Lineage
+* Git & GitHub
+* Technical Documentation
+
+---
+
 ## Author
 
-Karan Demta
+**Varul Demta**
 
 Analytics Engineering Portfolio Project
+
 Snowflake | dbt | SQL | Tableau
